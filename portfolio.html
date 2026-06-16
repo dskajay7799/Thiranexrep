@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Rivera — Frontend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-dot"></span>
+        Alex Rivera
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:0.75rem">
+        <button class="theme-btn" id="themeBtn">☀️ Light</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="badge">
+        <span class="dot"></span>
+        Open to work — July 2025
+      </div>
+      <h1>
+        Building interfaces<br />
+        <span class="gradient-text">people enjoy using.</span>
+      </h1>
+      <p>Frontend developer with 5+ years turning complex problems into clean, accessible web experiences.</p>
+      <div class="cta-row">
+        <a href="#projects" class="btn btn-primary">View work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="num">42+</div>
+          <div class="lbl">Projects shipped</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">5 yrs</div>
+          <div class="lbl">Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="num">18k</div>
+          <div class="lbl">GitHub stars</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-label">About</div>
+      <h2>A bit about me</h2>
+      <div class="divider"></div>
+      <div class="about-grid">
+        <div>
+          <p>I'm Alex, a frontend developer based in <strong>San Francisco</strong>. I work with startups and companies to build products that are fast, accessible, and good-looking.</p>
+          <p>My focus areas are <strong>design systems, performance, and accessibility</strong>. I've spoken at React Conf and CSS Day, and I like contributing to open source.</p>
+          <a href="#contact" class="btn btn-primary" style="margin-top:1rem;display:inline-flex">Let's talk</a>
+        </div>
+        <div>
+          <p style="font-weight:600;margin-bottom:0.75rem">Skills &amp; tools</p>
+          <div class="skills-list">
+            <span class="skill-tag">React / Next.js</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">CSS Grid / Flex</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Accessibility</span>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">Testing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-label">Selected work</div>
+      <h2>Projects</h2>
+      <div class="divider"></div>
+      <div class="projects-grid">
+
+        <article class="project-card featured">
+          <div class="project-thumb">🎨</div>
+          <div class="project-body">
+            <div class="tag-row">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Design System</span>
+            </div>
+            <h3>DesignKit — Component Library</h3>
+            <p>Open-source React component library used by 200+ companies. Built with TypeScript and CSS custom properties. 3M+ monthly npm downloads.</p>
+            <div class="project-links">
+              <a href="#">↗ Live demo</a>
+              <a href="#">⌥ GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb">📊</div>
+          <div class="project-body">
+            <div class="tag-row">
+              <span class="tag">Next.js</span>
+              <span class="tag">D3.js</span>
+            </div>
+            <h3>FlowBoard — Analytics</h3>
+            <p>Real-time dashboard processing 500K+ events/day with custom D3 charts and WebSocket streaming.</p>
+            <div class="project-links">
+              <a href="#">↗ Case study</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb">✍️</div>
+          <div class="project-body">
+            <div class="tag-row">
+              <span class="tag">ProseMirror</span>
+              <span class="tag">WebRTC</span>
+            </div>
+            <h3>Motif — Writing App</h3>
+            <p>Minimal collaborative writing tool with real-time sync built on ProseMirror and WebRTC.</p>
+            <div class="project-links">
+              <a href="#">↗ Demo</a>
+              <a href="#">⌥ GitHub</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-label">Get in touch</div>
+      <h2>Let's work together</h2>
+      <div class="divider"></div>
+      <div class="contact-grid">
+
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="jane@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send message</button>
+          <p id="formStatus">✓ Sent! I'll reply within 24h.</p>
+        </form>
+
+        <div class="contact-info">
+          <div class="info-item">
+            <div class="info-icon">📧</div>
+            <div>
+              <div class="lbl">Email</div>
+              <div class="val">alex@rivera.dev</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div>
+              <div class="lbl">Location</div>
+              <div class="val">San Francisco, CA (open to remote)</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">💼</div>
+            <div>
+              <div class="lbl">LinkedIn</div>
+              <div class="val">linkedin.com/in/alexrivera</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">🐙</div>
+            <div>
+              <div class="lbl">GitHub</div>
+              <div class="val">github.com/alexrivera</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2025 Alex Rivera. Built with HTML &amp; CSS.</p>
+      <div class="socials">
+        <a href="#" aria-label="GitHub" title="GitHub">GH</a>
+        <a href="#" aria-label="LinkedIn" title="LinkedIn">LI</a>
+        <a href="#" aria-label="Twitter" title="Twitter">𝕏</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop">↑</button>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', saved);
+    themeBtn.textContent = saved === 'dark' ? '☀️ Light' : '🌙 Dark';
+
+    themeBtn.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      themeBtn.textContent = next === 'dark' ? '☀️ Light' : '🌙 Dark';
+    });
+
+    const hbg = document.getElementById('hamburger');
+    const mob = document.getElementById('mobileMenu');
+    hbg.addEventListener('click', () => mob.classList.toggle('open'));
+    mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => backTop.classList.toggle('show', scrollY > 400), { passive: true });
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const s = document.getElementById('formStatus');
+      s.style.display = 'block';
+      e.target.reset();
+      setTimeout(() => s.style.display = 'none', 4000);
+    }
+  </script>
+</body>
+</html>
