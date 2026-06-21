@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Rivera · accessible portfolio</title>
+  <meta name="description" content="Personal portfolio of Alex Rivera, front-end developer focused on semantic, accessible web experiences." />
+  <meta name="theme-color" content="#1e293b" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>" />
+
+  <!-- minimal reset & design system -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f8fafc;
+      color: #0b1120;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      padding: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header, nav, main, section, article, footer {
+      display: block; /* ensure semantic elements are block-level */
+    }
+    h1, h2, h3 {
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 2rem; margin: 1.5rem 0 0.75rem; border-bottom: 2px solid #d1d9e6; padding-bottom: 0.3rem; }
+    h3 { font-size: 1.25rem; margin: 0.75rem 0 0.25rem; }
+    a {
+      color: #1e4a7a;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover, a:focus-visible {
+      text-decoration: underline;
+      outline: 2px solid #1e4a7a;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    /* card / layout */
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      margin: 1.5rem 0;
+      border: 1px solid #e9edf3;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    /* form */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    input, textarea, button {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.5rem;
+      background: white;
+      width: 100%;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    input:focus, textarea:focus, button:focus-visible {
+      outline: 2px solid #1e4a7a;
+      outline-offset: 2px;
+      border-color: #1e4a7a;
+      box-shadow: 0 0 0 3px rgba(30, 74, 122, 0.2);
+    }
+    button {
+      background: #1e4a7a;
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      width: auto;
+      padding: 0.7rem 2rem;
+      border-radius: 2rem;
+      transition: background 0.15s;
+    }
+    button:hover {
+      background: #14345c;
+    }
+    .required-star {
+      color: #b91c1c;
+      margin-left: 2px;
+    }
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0,0,0,0) !important;
+      border: 0 !important;
+    }
+    /* skip link */
+    .skip-link {
+      background: #0b1120;
+      color: #f8fafc;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0 0 0.5rem 0.5rem;
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      z-index: 1000;
+    }
+    .skip-link:focus {
+      top: 0.5rem;
+      text-decoration: none;
+      outline: 3px solid #facc15;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid #d1d9e6;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.75rem;
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5rem 0;
+    }
+    .badge-list li {
+      background: #e9edf3;
+      padding: 0.2rem 0.9rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== SKIP LINK ===== -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header role="banner" aria-label="Site header">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <div>
+        <h1>Alex Rivera</h1>
+        <p style="font-size: 1.2rem; color: #2c3e5c;">front-end · accessibility · inclusive design</p>
+      </div>
+      <!-- simple decorative avatar, accessible -->
+      <span aria-hidden="true" style="font-size: 3rem; line-height: 1;">👨‍💻</span>
+    </div>
+  </header>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav aria-label="Main navigation" role="navigation">
+    <ul style="display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; list-style: none; padding: 0.75rem 0; border-bottom: 1px solid #d1d9e6; margin-bottom: 1.5rem;">
+      <li><a href="#about" aria-current="page">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content" role="main">
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <article class="card" aria-label="Biography">
+        <p style="font-size: 1.1rem;">
+          I’m Alex, a front-end developer with a passion for <strong>semantic HTML</strong> and 
+          <strong>universal accessibility</strong>. I believe the web should work for everyone, 
+          regardless of ability or device. I build interfaces that are robust, performant, and 
+          a pleasure to navigate — with keyboard and screen reader users in mind.
+        </p>
+        <p style="margin-top: 0.75rem;">
+          Currently exploring Web Components and ARIA patterns. I also contribute to open-source 
+          accessibility tooling.
+        </p>
+      </article>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <div class="grid-2">
+        <article class="card" aria-labelledby="project1-title">
+          <h3 id="project1-title">A11y UI Kit</h3>
+          <p>Component library built with accessible patterns: focus management, ARIA landmarks, and color contrast checks.</p>
+          <p><strong>Tech:</strong> HTML, CSS, JavaScript, Storybook</p>
+          <a href="#" aria-label="View A11y UI Kit project (demo link)">View project →</a>
+        </article>
+        <article class="card" aria-labelledby="project2-title">
+          <h3 id="project2-title">Semantic Blog</h3>
+          <p>Blog theme with proper heading hierarchy, skip links, and screen-reader-friendly navigation.</p>
+          <p><strong>Tech:</strong> Eleventy, Nunjucks, WCAG 2.1 AA</p>
+          <a href="#" aria-label="View Semantic Blog project (demo link)">View project →</a>
+        </article>
+        <article class="card" aria-labelledby="project3-title">
+          <h3 id="project3-title">Form Pilot</h3>
+          <p>Accessible form library with real‑time validation, error announcements, and ARIA live regions.</p>
+          <p><strong>Tech:</strong> React, React Hook Form, WAI-ARIA</p>
+          <a href="#" aria-label="View Form Pilot project (demo link)">View project →</a>
+        </article>
+        <article class="card" aria-labelledby="project4-title">
+          <h3 id="project4-title">Color Vision</h3>
+          <p>Palette tool with simulation for colour blindness, ensuring text contrast meets WCAG thresholds.</p>
+          <p><strong>Tech:</strong> Vanilla JS, canvas, Color.js</p>
+          <a href="#" aria-label="View Color Vision project (demo link)">View project →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills & expertise</h2>
+      <div class="card">
+        <ul class="badge-list" role="list" aria-label="List of technical skills">
+          <li>HTML5 (semantic)</li>
+          <li>CSS / Flexbox / Grid</li>
+          <li>JavaScript (ES6+)</li>
+          <li>ARIA / WAI-ARIA</li>
+          <li>React / Vue</li>
+          <li>Lighthouse / Axe</li>
+          <li>Git & GitHub</li>
+          <li>Responsive design</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT FORM (accessible, tab-navigable) ===== -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get in touch</h2>
+      <div class="card">
+        <form id="contact-form" action="#" method="post" novalidate aria-label="Contact form">
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name">Name <span class="required-star" aria-hidden="true">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="e.g. Jamie Lee" autocomplete="name" aria-required="true" />
+          </div>
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email <span class="required-star" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="jamie@example.com" autocomplete="email" aria-required="true" />
+          </div>
+          <!-- Subject -->
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project inquiry" autocomplete="subject" />
+          </div>
+          <!-- Message -->
+          <div class="form-group">
+            <label for="message">Message <span class="required-star" aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="4" required placeholder="Tell me about your project…" aria-required="true"></textarea>
+          </div>
+          <!-- Submit -->
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <button type="submit" aria-label="Send message">Send message</button>
+            <span style="font-size: 0.9rem; color: #2c3e5c;">All fields marked with <span aria-hidden="true">*</span> are required.</span>
+          </div>
+          <!-- hidden honeypot (simple) -->
+          <input type="text" name="_gotcha" style="display:none;" aria-hidden="true" tabindex="-1" />
+        </form>
+        <!-- after-submit message (demo) -->
+        <p id="form-status" role="status" aria-live="polite" style="margin-top: 0.75rem; font-style: italic; color: #1e4a7a;"></p>
+      </div>
+      <p style="margin-top: 0.5rem;">
+        📬 Or reach me directly at <a href="mailto:alex.r@example.com" aria-label="Email Alex at alex.r@example.com">alex.r@example.com</a>
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo" aria-label="Page footer">
+    <p>
+      &copy; 2026 Alex Rivera — built with semantic HTML, accessibility first.
+      <span style="display: inline-block; margin-left: 0.75rem;">⚡</span>
+    </p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+      <a href="#" aria-label="Accessibility statement (placeholder)">Accessibility statement</a> &middot;
+      <a href="#" aria-label="GitHub profile (placeholder)">GitHub</a> &middot;
+      <a href="#" aria-label="LinkedIn profile (placeholder)">LinkedIn</a>
+    </p>
+  </footer>
+
+  <!-- ===== tiny JS for form demo: polite status update ===== -->
+  <script>
+    (function() {
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+      if (form && status) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault(); // prevent actual submission (demo)
+          // simple feedback
+          status.textContent = '✅ Thanks, your message has been sent (demo). I’ll reply within 48 hours.';
+          // reset after 6s
+          setTimeout(() => {
+            status.textContent = '';
+          }, 8000);
+          // optionally clear fields? we keep them for demo.
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
