@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <span class="nav-brand">ShopEasy</span>
+    <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav-links">
+        <li data-page="home">Home</li>
+        <li data-page="products">Products</li>
+        <li data-page="about">About</li>
+        <li data-page="contact">Contact</li>
+    </ul>
+</nav>
+
+
+<div id="page-home" class="page">
+
+    <div class="hero">
+        <h1>Find What You Need</h1>
+        <p>Electronics, books, clothing, and more - all in one place.</p>
+        <button class="btn" onclick="goProducts()">Browse Products</button>
+    </div>
+
+    <div class="container">
+        <div class="page-content">
+
+            <div class="info-boxes">
+                <div class="info-box">
+                    <h3>Wide Selection</h3>
+                    <p>Products across multiple categories from trusted sources.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Good Prices</h3>
+                    <p>We try to keep our prices fair and competitive.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy on most items, no questions asked.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Fast Shipping</h3>
+                    <p>Most orders ship within 1-2 business days.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid" id="featured-grid">
+                <p class="loading-msg">Loading...</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 28px;">
+                <button class="btn btn-primary" onclick="goProducts()">See All Products</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div id="page-products" class="page">
+    <div class="container">
+        <div class="page-content">
+
+            <h1 style="font-size: 22px; margin-bottom: 6px;">All Products</h1>
+            <p style="color: #666; font-size: 14px; margin-bottom: 24px;">Use the search and filters below to find what you are looking for.</p>
+
+            <div class="filters-row">
+                <div class="filter-group search-box">
+                    <label for="search-input">Search</label>
+                    <input type="text" id="search-input" placeholder="Search products...">
+                </div>
+                <div class="filter-group">
+                    <label for="category-filter">Category</label>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-select">Sort By</label>
+                    <select id="sort-select">
+                        <option value="default">Default</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="rating">Top Rated</option>
+                        <option value="name">Name A-Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <p class="results-count" id="results-count"></p>
+            <div class="product-grid" id="products-grid">
+                <p class="loading-msg">Loading products...</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="page-detail" class="page">
+    <div class="container">
+        <div class="page-content">
+            <button class="back-btn" onclick="goProducts()">&larr; Back to Products</button>
+            <div id="detail-content">
+                <p class="loading-msg">Loading...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="page-about" class="page">
+    <div class="container">
+        <div class="page-content">
+
+            <h1 style="font-size: 22px; margin-bottom: 24px;">About ShopEasy</h1>
+
+            <div class="about-block">
+                <h2>What is ShopEasy?</h2>
+                <p>ShopEasy is an e-commerce product catalog built as a final year capstone project for our Web Development course. The project uses HTML, CSS, JavaScript on the frontend and Python Flask on the backend.</p>
+                <p>The goal was to build a full-stack web application from scratch that connects a frontend to a backend API. We learned a lot about how real shopping websites work during this project.</p>
+            </div>
+
+            <div class="about-block">
+                <h2>Technologies Used</h2>
+                <ul>
+                    <li>HTML and CSS for the frontend layout and design</li>
+                    <li>Vanilla JavaScript with fetch() and async/await for API calls</li>
+                    <li>Python Flask for the backend REST API</li>
+                    <li>JSON file for storing product data</li>
+                    <li>Flask-CORS to handle cross origin requests</li>
+                    <li>Gunicorn for production deployment on Render</li>
+                </ul>
+            </div>
+
+            <div class="about-block">
+                <h2>Features</h2>
+                <ul>
+                    <li>Browse all products from the catalog</li>
+                    <li>Search products by name, category or description</li>
+                    <li>Filter by category and sort by price or rating</li>
+                    <li>View detailed product information</li>
+                    <li>Responsive layout for mobile and desktop</li>
+                    <li>RESTful API with basic error handling</li>
+                </ul>
+            </div>
+
+            <div class="about-block">
+                <h2>Our Team</h2>
+                <p>This project was developed by a group of third-year computer science students.</p>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <h3>Arjun Sharma</h3>
+                        <p>Frontend and UI</p>
+                    </div>
+                    <div class="team-card">
+                        <h3>Priya Nair</h3>
+                        <p>Backend and API</p>
+                    </div>
+                    <div class="team-card">
+                        <h3>Rahul Menon</h3>
+                        <p>Testing and Deployment</p>
+                    </div>
+                    <div class="team-card">
+                        <h3>Sneha Iyer</h3>
+                        <p>Documentation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-block">
+                <h2>Project Status</h2>
+                <p>This is a college project and not a real store. Products and prices are for demonstration only. The cart and payment features are not yet implemented.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="page-contact" class="page">
+    <div class="container">
+        <div class="page-content">
+
+            <h1 style="font-size: 22px; margin-bottom: 6px;">Contact Us</h1>
+            <p style="color: #666; font-size: 14px; margin-bottom: 28px;">Have a question or feedback? Fill out the form and we will get back to you.</p>
+
+            <div class="contact-layout">
+
+                <div class="contact-form-box">
+                    <h2>Send a Message</h2>
+                    <div id="form-success" class="form-success">
+                        Your message was sent. We will reply within 1-2 business days.
+                    </div>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="c-name">Full Name</label>
+                            <input type="text" id="c-name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-email">Email Address</label>
+                            <input type="email" id="c-email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-subject">Subject</label>
+                            <input type="text" id="c-subject" placeholder="What is this about?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-message">Message</label>
+                            <textarea id="c-message" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 11px; font-size: 14px;">Send Message</button>
+                    </form>
+                </div>
+
+                <div>
+                    <div class="contact-info-box">
+                        <h3>Contact Information</h3>
+                        <p><strong>Email:</strong><br>support@shopeasy.example.com</p>
+                        <p><strong>Phone:</strong><br>+91 98765 43210</p>
+                        <p><strong>Hours:</strong><br>Monday to Friday, 9am - 6pm</p>
+                        <p><strong>Address:</strong><br>CS Department, Block A<br>College of Engineering<br>Bangalore, Karnataka</p>
+                    </div>
+                    <div class="contact-info-box">
+                        <h3>Note</h3>
+                        <p style="font-size: 13px;">This is a student project. The contact form does not actually send emails. It is here to show the frontend working.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="footer-inner">
+        <span class="footer-brand">ShopEasy</span>
+        <div class="footer-links">
+            <span id="footer-home">Home</span>
+            <span id="footer-products">Products</span>
+            <span id="footer-about">About</span>
+            <span id="footer-contact">Contact</span>
+        </div>
+        <p class="footer-copy">2024 ShopEasy. Built as a college capstone project.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
